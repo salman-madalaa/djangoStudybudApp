@@ -1,0 +1,13 @@
+{% extends 'main/main.html' %}
+
+{% block content %}
+<h1 style="text-align:center;"> New  </h1>
+<div style="margin-left: 15px;">
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="button" class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}
