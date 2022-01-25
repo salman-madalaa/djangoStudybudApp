@@ -1,0 +1,1 @@
+In this project i change the usermodel  to Person (custome_user_model) 

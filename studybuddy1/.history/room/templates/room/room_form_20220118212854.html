@@ -1,0 +1,16 @@
+{% extends 'main/main.html' %}
+
+{% block content %}
+
+{% if  %}
+{% endif %}
+<h2 style="text-align:center;"><u>New Room</u></h2> 
+<div style="margin-left: 15px;">
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="button" class="btn btn-primary" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}

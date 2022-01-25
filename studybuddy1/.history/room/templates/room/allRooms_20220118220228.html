@@ -1,0 +1,21 @@
+{% extends 'main/main.html' %}
+
+{% block content %}
+<h1 style="text-align:center">This is All Rooms Page</h1>
+<div>
+   <a class="btn btn-outline-primary" href="{% url 'create-room' %}" role="button">Create a Room</a> <br> <br>
+    <div style="margin-left: 15px;">
+        {% for room in rooms %}
+        <div>
+            <span>@{{room.host.username}}</span>
+            <h3>
+                <a href="/room/getRoom/{{room.id}}">{{room.id}} </a> -- {{room.name}} -- {{room.description}} 
+            </h3>
+            <small>{{room.topic.name}}</small> <br>
+            <a class="btn btn-outline-primary" href="{% url 'update-room' room.id %}" role="button">update</a>  
+            <hr>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
