@@ -61,10 +61,10 @@
       <div class="layout__body">
         <h2 class="auth__tagline">Find your study partner</h2>
 
-        <form class="form" action="" method="POST" enctype="multipart/form-data">
+        <form class="form" action="" method="POST" enctype="multip">
           {% csrf_token %}
 
-          {% for field in registrationForm %}
+          {% for field in newregistrationform %}
           <div class="form__group form__group">
             <label for="room_name">{{field.label}}</label>
             {{field}}

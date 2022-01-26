@@ -43,12 +43,14 @@ def Logout(request):
 
 def RegisterPage(request):
     page='Register';
-    registrationform = UserForm()
-
+    registrationform = UserCreationForm()
+    
     if request.method == 'POST':
-        form = UserForm(request.POST,request.FILES)
-        
+
+        form = UserForm(request.POST)
+        print("out side");
         if form.is_valid():
+            print("inside");
             user = form.save(commit=False) # here we put commit is false so it does not save in data base  and we can get the user object . Because we can change the username  to be lower case . 
             user.username = user.username.lower();
             user.save(); # then After username is converted in to lower case then we can save the user object
@@ -73,7 +75,7 @@ def updateUser(request):
     form = UserForm(instance=user)
     
     if request.method == 'POST':
-        form = UserForm(request.POST,request.FILES,instance=user)
+        form = UserForm(request.POST,instance=user)
         if form.is_valid():
             form.save();
             return redirect('user-profile',id=user.id);

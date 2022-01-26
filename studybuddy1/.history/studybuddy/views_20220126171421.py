@@ -46,7 +46,7 @@ def RegisterPage(request):
     registrationform = UserForm()
 
     if request.method == 'POST':
-        form = UserForm(request.POST,request.FILES)
+        form = UserForm(request.POST)
         
         if form.is_valid():
             user = form.save(commit=False) # here we put commit is false so it does not save in data base  and we can get the user object . Because we can change the username  to be lower case . 
