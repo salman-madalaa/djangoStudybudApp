@@ -1,0 +1,3 @@
+In this project i "replace" the default User Model to Custome Model(User)
+
+In this Project i  create User model with additional fields like image, 
