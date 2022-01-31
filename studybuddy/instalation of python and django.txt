@@ -1,0 +1,23 @@
+INSTALATION OF PHTHON AND DJANGO :
+--------------------------------------------------
+
+1) Download and Install the python latest version  from the url =  https://www.python.org/downloads/
+
+2) After instalation set the path in environment Varialbles  like  =  C:\Users\Lenovo\AppData\Local\Programs\Python\Python310 ; C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\Scripts  ( set these two paths  in system variables    Note : theses are the my  paths , so check your path  and paste those paths based on your laptop)
+
+3) check python is install or not by  enter  this command    : python --version     
+
+
+
+
+DJANGO INSTALLATION :
+------------------------------
+1) After Successfully installation of python you can instal the Django by enter this command  :   python -m pip install Django
+
+2) for to check Django installed or not Enter this command  :   python -m django --version
+
+3) for to check all the versions of installed modules including Django Enter this command  :    pip freeze
+
+4)  for django db  connection install django-db-connection-pool  by Enter this command  :  pip install django-db-connection-pool[all]
+
+

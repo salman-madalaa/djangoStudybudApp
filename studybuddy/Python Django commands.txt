@@ -1,0 +1,64 @@
+ 1 ) djnago-admin startproject PLM  = it is used to create a project
+ 2 ) django-admin startapp eco          = it is used to create app
+ 3 ) after we create App first we have to add the app in INSTALLED_APPS block which is present in the settings.py file
+
+For Using Templates:
+ 4 ) we have to create  the templates folder outside the project 
+
+ 5 ) after the we have to give the TEMPLAT_PATH  in the TEMPLATES block which is present in the settings.py file
+	for that we have to define the path like below
+	TEMPLAT_PATH = os.path.join(os.path.abspath(BASE_PATH),'templates')
+	
+	
+For Using Static:
+ 6 ) we have to create  the static folder outside the project 
+ 7 ) after the we have to give the STATIC_PATH  in the STATICFILES_DIRS block which is present in the settings.py file
+	for that we have to define the path like below
+	STATIC_PATH = os.path.join(os.path.abspath(BASE_PATH),'static')
+
+Note : a) here we have to display the dynamic data using template tags ' {{ }} '
+           b) first we have to load the static folder using " {% load static %}"
+           c) we have to display image using teplate Tag  " {%static 'image/welcome.html' %} "
+
+
+8) after that we have to define the app urls inside the project Url which is present in the settings.py
+	from eco import views
+
+9) we have to define the View (BusinessLogic) in views.py file 
+	a) from django.http import HttpResponse
+	b) using render we have to display which html is used to display  by      " return render(request,'welcome.html',{'temp' : temp});
+
+CREATING MODELS:
+ 10) we have to create models in the model.py folder 
+	Ex : class employee(models.Model):
+		eno = models.IntegerField();
+		ename = models.ChatacterField(max_length=64);
+		esal = models.FloatField() 
+
+11 ) after creating the model we have to run the command  " py manage.py makemigrations"
+      Note  :  makemigrations  is  create Sql create command  based on the model we given 
+	we can also get the sql table by using the command py manage.py sqlmigrate employee 0001
+
+12 ) after that we have to  check if the database connection working or not. for that we have to run the command 
+	a) py manage.py shell
+	b) from dhango.db import connection
+	c) c = connection.cursor()
+       if we not getting any error then database connection is working fine .
+
+13) after that we have to run the command 
+	 py manage.py migrate
+	After run the above command  all the tables are created in database
+	Note: migrate is used to  run the all sql  create commands which are created by the makemigration 
+
+14 )   we have to register the app in admin module    Other wise we can not  get the table  in admin view
+	
+
+15 ) for creating userName and password we have to run the command 
+	py manage.py createsuperuser
+      --> enter username ,emai,password
+      --> so that we have to login the admin module based on the username and password we given
+
+16 ) after the login we can check the all our Models which we created  or not . If not present  we have to check if the model is register in admin  or not . If not register we can register that Model in admin using below process
+     -->Go to the admin.py file in side the app 
+     --> from employee.models import Employee
+     --> admin.site.register(Employee)
